@@ -6,38 +6,58 @@
 exports.view = function(req, res){
   res.render('index', {
     'projects': [
-      { 'name': 'Waiting in Line',
-        'image': 'lorempixel.people.1.jpeg',
-        'id': 'project1'
+      { 'name': 'Cam Newton',
+        'image': 'cam.png',
+        'id': 'project1',
+        'cfavor': 'Buy me red cups',
+        'rfavor': 'I will let you borrow ping pong balls'
       },
-      { 'name': 'Needfinding',
-        'image': 'lorempixel.city.1.jpeg',
-        'id': 'project2'
+      { 'name': 'Peyton Manning',
+        'image': 'peyton.jpg',
+        'id': 'project2',
+        'cfavor': 'Pick me up from LAX at 6:30 PM',
+        'rfavor': 'I will buy you lunch at Del Taco in return.'
       },
-      { 'name': 'Prototyping',
-        'image': 'lorempixel.technics.1.jpeg',
-        'id': 'project3'
+      { 'name': 'Tom Brady',
+        'image': 'brady.jpg',
+        'id': 'project3',
+        'cfavor': 'Buy me red cups',
+        'rfavor': 'I will let you borrow ping pong balls'
       },
-      { 'name': 'Heuristic Evaluation',
-        'image': 'lorempixel.abstract.1.jpeg',
-        'id': 'project4'
+    ],
+    'favrs': [
+      {
+        'name': 'Mark',
+        'task': 'Cook Dinner',
+        'done': 1,
+        'month': 2,
+        'day': 4,
+        'id': 'favr1'
       },
-      { 'name': 'Visualization',
-        'image': 'lorempixel.abstract.8.jpeg',
-        'id': 'project5'
+      {
+        'name': 'Tim',
+        'task': 'Do Dishes',
+        'done': 1,
+        'month': 2,
+        'day': 11,
+        'id': 'favr2'
       },
-      { 'name': 'Social design',
-        'image': 'lorempixel.people.2.jpeg',
-        'id': 'project6'
+      {
+        'name': 'Ron',
+        'task': 'Clean Clothes',
+        'done': 1,
+        'month': 3,
+        'day': 21,
+        'id': 'favr3'
       },
-      { 'name': 'Gestural interaction',
-        'image': 'lorempixel.technics.2.jpeg',
-        'id': 'project7'
+      {
+        'name': 'Latavius',
+        'task': 'Get Groceries',
+        'done': 1,
+        'month': 4,
+        'day': 20,
+        'id': 'favr4'
       },
-      { 'name': 'Design tools',
-        'image': 'lorempixel.city.2.jpeg',
-        'id': 'project8'
-      }
-    ]
+    ],
   });
 };
