@@ -26,7 +26,8 @@
         "done": 1,
         "month": 2,
         "day": 4,
-        "id": "favr1"
+        "id": "favr1",
+        "date": "2016-02-04"
       },
       {
         "name": "Tim",
@@ -34,7 +35,8 @@
         "done": 1,
         "month": 2,
         "day": 11,
-        "id": "favr2"
+        "id": "favr2",
+        "date": "2016-02-01"
       },
       {
         "name": "Ron",
@@ -42,15 +44,15 @@
         "done": 1,
         "month": 3,
         "day": 21,
-        "id": "favr3"
+        "id": "favr3",
+        "date": "2016-03-21"
       },
       {
         "name": "Latavius",
         "task": "Get Groceries",
         "done": 1,
-        "month": 4,
-        "day": 20,
-        "id": "favr4"
+        "id": "favr4",
+        "date": "2016-04-20"
       }
     ]
   }

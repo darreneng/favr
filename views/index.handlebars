@@ -26,30 +26,8 @@
 </nav>
 
 <div class="container">
-  <!--
-  <div class="jumbotron">
-    <h1>Favr Feed</h1>
-    <p>Most recent Favr requests!</p>
-  </div>
--->
 
 		<h4>Pending Favrs</h4>
-		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
-		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
-		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
-    <!--
-                {{#each projects}}
-                  <div class="project" id="{{id}}">
-                          <a href="#" class="thumbnail">
-                                  <img src="images/{{image}}" class="img">
-                                  <p>{{name}}</p>
-                                  <p>Request: {{cfavor}}</p>
-                                  <p>In Return: {{cfavor}}</p>
-
-                          </a>
-                  </div>
-                {{/each}}
-      -->
 
     <table class="table">
       <thead>
@@ -64,10 +42,11 @@
         {{#each favrs}}
           <div class='favr' id="{{id}}">
             <tr>
-              <td>{{month}}/{{day}}</td>
+              <!--<td>{{month}}/{{day}}</td>-->
+              <td>{{date}}</td>
               <td>{{name}}</td>
               <td>{{task}}</td>
-              <td>{{done}}</td>
+              <td><input type="checkbox" name="done" value="done"></td>
             </tr>
           </div>
         {{/each}}
