@@ -13,8 +13,10 @@ var project = require('./routes/project');
 var offer = require('./routes/offer');
 var profile = require('./routes/profile');
 var request = require('./routes/request');
-// Example route
-// var user = require('./routes/user');
+var data = require('./routes/data')
+var completedFavrs = require('./routes/completedFavrs')
+
+
 
 var app = express();
 
@@ -44,6 +46,8 @@ app.get('/project/:name', project.viewProject);
 app.get('/offer', offer.view);
 app.get('/profile', profile.view);
 app.get('/request', request.view);
+app.get('/data', data.favrInfo);
+app.get('/completedFavrs', completedFavrs.addCompletedFavr);
 // Example route
 // app.get('/users', user.list);
 

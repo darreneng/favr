@@ -12,6 +12,8 @@ $(document).ready(function() {
 function initializePage() {
 	console.log("REACHED");
 	$('.delete').click(deleteFavr);
+
+	$('.complete').click(completeFavr);
 	// add any functionality and listeners you want here
 }
 
@@ -26,3 +28,12 @@ function deleteFavr(e){
 	}
 
 }
+
+function completeFavr(){
+	var yes = confirm("This task will be marked as completed.");
+	if(!yes){
+		return false;
+	}
+}
+
+
