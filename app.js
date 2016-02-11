@@ -13,6 +13,8 @@ var project = require('./routes/project');
 var offer = require('./routes/offer');
 var profile = require('./routes/profile');
 var request = require('./routes/request');
+var home = require('./routes/home')
+var signup = require('./routes/signup');
 // Example route
 // var user = require('./routes/user');
 
@@ -44,6 +46,8 @@ app.get('/project/:name', project.viewProject);
 app.get('/offer', offer.view);
 app.get('/profile', profile.view);
 app.get('/request', request.view);
+app.get('/home', home.view);
+app.get('/signup', signup.view);
 // Example route
 // app.get('/users', user.list);
 
