@@ -15,7 +15,8 @@ var profile = require('./routes/profile');
 var request = require('./routes/request');
 var data = require('./routes/data')
 var completedFavrs = require('./routes/completedFavrs')
-
+var home = require('./routes/home')
+var signup = require('./routes/signup');
 
 
 var app = express();
@@ -48,8 +49,8 @@ app.get('/profile', profile.view);
 app.get('/request', request.view);
 app.get('/data', data.favrInfo);
 app.get('/completedFavrs', completedFavrs.addCompletedFavr);
-// Example route
-// app.get('/users', user.list);
+app.get('/home', home.view);
+app.get('/signup', signup.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

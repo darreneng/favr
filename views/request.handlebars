@@ -19,13 +19,14 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">FAVR</a>
+          <a class="navbar-brand" href="home">FAVR</a>
         </div>
         <ul class="nav navbar-nav">
           <li><a href="profile">My Profile</a></li>
-          <li><a href="/">Pending Favrs</a></li>
+          <li><a href="home">Pending Favrs</a></li>
           <li><a href="offer">Offer a Favr</a></li>
           <li class="active"><a href="request">Request a Favr</a></li>
+          <li><a href="/">Logout</a></li>
         </ul>
       </div>
     </nav>
@@ -38,9 +39,9 @@
     <div class="formcontainer">
       <form class="form">
         Who needs to do a Favr for you?<br>
-        <input type="text" name="name"><br>
+        <input type="text" name="name" required><br>
         What is this Favr?<br>
-        <input type="text" name="description"><br>
+        <input type="text" name="description" maxlength="80" required><br>
         Complete by:<br>
         <input type="date" name="duedate"><br><br>
         <input type="submit" value="Submit"><br><br>
