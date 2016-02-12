@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project</title>
+    <title>Favr Request</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/introHCI.css" rel="stylesheet">
+    <script src="js/jquery-1.11.0.js"> </script> 
+    <script src="js/introHCI.js"> </script>
+    
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -30,25 +28,23 @@
         </ul>
       </div>
     </nav>
-	<!-- this is a comment in HTML -->
+
+
 	<div class="container">
 
     <h4>Request a Favr</h4>
 
-
     <div class="formcontainer">
-      <form class="form">
+      <form class="form" action="/requestFavr" method="get"><br>
         Who needs to do a Favr for you?<br>
-        <input type="text" name="name" required><br>
+        <input type="text" name="name" required><br><br>
         What is this Favr?<br>
-        <input type="text" name="description" maxlength="80" required><br>
+        <input type="text" name="task" maxlength="80" required><br><br>
         Complete by:<br>
-        <input type="date" name="duedate"><br><br>
-        <input type="submit" value="Submit"><br><br>
+        <input type="date" name="date"><br><br>
+        <input type="submit" id="request" value="Submit"><br><br>
       </form>
     </div>
-
-    <p><a href="/">Back &raquo;</a></p>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>

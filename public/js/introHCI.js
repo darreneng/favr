@@ -1,21 +1,17 @@
 'use strict';
 
-
-// Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
 })
 
-/*
- * Function that is called when the document is ready.
- */
 function initializePage() {
-	console.log("REACHED");
-	$('.delete').click(deleteFavr);
 
+	$('.delete').click(deleteFavr);
+	$('#offer').click(offerFavr);
 	$('.complete').click(completeFavr);
-	// add any functionality and listeners you want here
+
 }
+
 
 function deleteFavr(e){
 	e.preventDefault();
@@ -29,11 +25,19 @@ function deleteFavr(e){
 
 }
 
-function completeFavr(){
+function completeFavr(e){
 	var yes = confirm("This task will be marked as completed.");
 	if(!yes){
 		return false;
 	}
+}
+
+function offerFavr(e){
+	var yes = confirm("Confirm that you will be offering a Favr.");
+	if (!yes){
+		return false;
+	}
+	alert("Successfully offered Favr!");
 }
 
 

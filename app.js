@@ -8,18 +8,22 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
+
 var index = require('./routes/index');
 var project = require('./routes/project');
 var offer = require('./routes/offer');
 var profile = require('./routes/profile');
 var request = require('./routes/request');
-var data = require('./routes/data')
-var completedFavrs = require('./routes/completedFavrs')
-var home = require('./routes/home')
+var data = require('./routes/data');
+var completedFavrs = require('./routes/completedFavrs');
+var home = require('./routes/home');
 var signup = require('./routes/signup');
+var offerSubmit = require('./routes/offerFavr');
+var requestSubmit = require('./routes/requestFavr');
 
 
 var app = express();
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -36,10 +40,12 @@ app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
+
 
 // Add routes here
 app.get('/', index.view);
@@ -51,6 +57,10 @@ app.get('/data', data.favrInfo);
 app.get('/completedFavrs', completedFavrs.addCompletedFavr);
 app.get('/home', home.view);
 app.get('/signup', signup.view);
+app.get('/offerFavr', offerSubmit.offerFavr);
+app.get('/requestFavr', requestSubmit.requestFavr);
+
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
