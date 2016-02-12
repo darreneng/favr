@@ -20,6 +20,7 @@ var home = require('./routes/home');
 var signup = require('./routes/signup');
 var offerSubmit = require('./routes/offerFavr');
 var requestSubmit = require('./routes/requestFavr');
+var deletion = require('./routes/deleteFavr');
 
 
 var app = express();
@@ -59,6 +60,7 @@ app.get('/home', home.view);
 app.get('/signup', signup.view);
 app.get('/offerFavr', offerSubmit.offerFavr);
 app.get('/requestFavr', requestSubmit.requestFavr);
+app.get('/deleteFavr', deletion.deleteFavr);
 
 
 
