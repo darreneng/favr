@@ -21,7 +21,7 @@
     ],
     "favrs": [
       {
-        "name": "Mark",
+        "name": "Mark B.",
         "task": "Cook Dinner",
         "done": 1,
         "month": 2,
@@ -30,7 +30,7 @@
         "date": "2016-02-04"
       },
       {
-        "name": "Tim",
+        "name": "Tim K.",
         "task": "Do Dishes",
         "done": 1,
         "month": 2,
@@ -39,7 +39,7 @@
         "date": "2016-02-01"
       },
       {
-        "name": "Ron",
+        "name": "Ron W.",
         "task": "Clean Clothes",
         "done": 1,
         "month": 3,
@@ -48,7 +48,7 @@
         "date": "2016-03-21"
       },
       {
-        "name": "Latavius",
+        "name": "Latavius L.",
         "task": "Get Groceries",
         "done": 1,
         "id": "favr4",
