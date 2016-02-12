@@ -27,6 +27,7 @@
       <li class="active"><a href="#">Pending Favrs</a></li>
       <li><a href="offer">Offer a Favr</a></li>
       <li><a href="request">Request a Favr</a></li>
+      <li><a href="/">Logout</a></li>
     </ul>
   </div>
 </nav>
@@ -42,6 +43,7 @@
               <th>Date</td>
               <th>User</td>
               <th>Task</td>
+              <th>Is this Favr complete?</td>
             </tr>
       </thead>
       <tbody>
@@ -59,9 +61,13 @@
                 <input hidden type="text" name="task" value="{{task}}">
                 <input hidden type="text" name="id" value="{{id}}">
               <td><input type="submit" class="complete" value="Completed" ></td>
+             </form>
+
+              <form action ="/deleteFavr" method = "get">
+                <input hidden type="text" name="name" value="{{name}}">
+              <td><input type ="submit" class="delete" value="Delete"></td>
             </form>
 
-              <td><input type ="submit" class="delete" value="Delete"></td>
             </tr>
           </div>
         {{/each}}

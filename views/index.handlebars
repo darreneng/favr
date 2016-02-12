@@ -16,7 +16,7 @@
             function check(form) { /*function to check userid & password*/
                 /*the following code checkes whether the entered userid and password are matching*/
                 if(form.userid.value == "Cam Newton" && form.pswrd.value == "panthers") {
-                    window.open('home')/*opens the target page while Id & password matches*/
+                    window.open('home', '_self',false)/*opens the target page while Id & password matches*/
                 }
                 else {
                     alert("Incorrect Username or Password")/*displays error message*/
