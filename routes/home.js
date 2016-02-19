@@ -4,5 +4,6 @@
 
 var data = require('../data.json');
 exports.view = function(req, res){
-  res.render('home', data);
+  var favrs = data['users'][0];
+  res.render('home', favrs);
 };

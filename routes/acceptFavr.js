@@ -1,21 +1,19 @@
-var data = require("../data.json");
+var data = require('../data.json');
 
 
-exports.addCompletedFavr = function(req, res) {
-	var name = req.query.name;
+exports.accept = function(req, res){
+  	var name = req.query.name;
 	var task = req.query.task;
 	var date = req.query.date;
 	var favr = {"name":name,"task":task,"date":date};
-	data['users'][0]['completed'].push(favr);
+	data['users'][0]['favrs'].push(favr);
 
 	var favrs = data['users'][0];
 
-	findAndRemove(data['users'][0]['favrs'], "name", name);
-
-
-	res.render('home', favrs);
+  findAndRemove(data['users'][0]['incoming'], "name", name);	
+  
+  res.render('home', favrs);
 }
-
 
 //Function to remove JSON object from array
 function findAndRemove(array, property, value) {
@@ -25,4 +23,3 @@ function findAndRemove(array, property, value) {
     }    
   });
 }
-
