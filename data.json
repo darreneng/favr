@@ -1,58 +1,51 @@
 {
-    "projects": [
-      { "name": "Cam Newton",
-        "image": "cam.png",
-        "id": "project1",
-        "cfavor": "Buy me red cups",
-        "rfavor": "I will let you borrow ping pong balls"
-      },
-      { "name": "Peyton Manning",
-        "image": "peyton.jpg",
-        "id": "project2",
-        "cfavor": "Pick me up from LAX at 6:30 PM",
-        "rfavor": "I will buy you lunch at Del Taco in return."
-      },
-      { "name": "Tom Brady",
-        "image": "brady.jpg",
-        "id": "project3",
-        "cfavor": "Buy me red cups",
-        "rfavor": "I will let you borrow ping pong balls"
-      }
-    ],
-    "favrs": [
+  "users":[
       {
-        "name": "Mark B.",
-        "task": "Cook Dinner",
-        "done": 1,
-        "month": 2,
-        "day": 4,
-        "id": "favr1",
-        "date": "2016-02-04"
-      },
-      {
-        "name": "Tim K.",
-        "task": "Do Dishes",
-        "done": 1,
-        "month": 2,
-        "day": 11,
-        "id": "favr2",
-        "date": "2016-02-01"
-      },
-      {
-        "name": "Ron W.",
-        "task": "Clean Clothes",
-        "done": 1,
-        "month": 3,
-        "day": 21,
-        "id": "favr3",
-        "date": "2016-03-21"
-      },
-      {
-        "name": "Latavius L.",
-        "task": "Get Groceries",
-        "done": 1,
-        "id": "favr4",
-        "date": "2016-04-20"
-      }
-    ]
-  }
+      "username": "Cam Newton",
+      "password": "panthers",
+      "favrs": [
+        {
+          "name": "Mark B.",
+          "task": "Cook Dinner",
+          "id": "favr1",
+          "date": "2016-02-04"
+        },
+        {
+          "name": "Tim K.",
+          "task": "Do Dishes",
+          "id": "favr2",
+          "date": "2016-02-01"
+        },
+        {
+          "name": "Ron W.",
+          "task": "Clean Clothes",
+          "id": "favr3",
+          "date": "2016-03-21"
+        },
+        {
+          "name": "Latavius L.",
+          "task": "Get Groceries",
+          "id": "favr4",
+          "date": "2016-04-20"
+        }
+      ],
+      "completed": [
+        {
+          "name": "Tyler T.",
+          "task": "Serenade",
+          "id": "favr5",
+          "date": "2016-01-03"
+        }
+      ],
+      "incoming":[
+        {
+          "name": "Adam C.", 
+          "task": "Fix cupboard",
+          "id": "favr6",
+          "date": "2016-03-23"
+        }
+      ]
+
+    }
+  ]
+}

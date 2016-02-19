@@ -1,17 +1,19 @@
-var data = require("../completed.json");
-var pendingData = require("../data.json");
+var data = require("../data.json");
+
 
 exports.addCompletedFavr = function(req, res) {
 	var name = req.query.name;
 	var task = req.query.task;
 	var date = req.query.date;
 	var favr = {"name":name,"task":task,"date":date};
-	data["favrs"].push(favr);
+	data['users'][0]['completed'].push(favr);
 
-	findAndRemove(pendingData["favrs"], "name", name);
+	var favrs = data['users'][0];
+
+	findAndRemove(data['users'][0]['favrs'], "name", name);
 
 
-	res.render('home', pendingData);
+	res.render('home', favrs);
 }
 
 

@@ -21,6 +21,9 @@ var signup = require('./routes/signup');
 var offerSubmit = require('./routes/offerFavr');
 var requestSubmit = require('./routes/requestFavr');
 var deletion = require('./routes/deleteFavr');
+var incoming = require('./routes/incoming');
+var declineFavr = require('./routes/declineFavr');
+var acceptFavr = require('./routes/acceptFavr');
 
 
 var app = express();
@@ -61,7 +64,9 @@ app.get('/signup', signup.view);
 app.get('/offerFavr', offerSubmit.offerFavr);
 app.get('/requestFavr', requestSubmit.requestFavr);
 app.get('/deleteFavr', deletion.deleteFavr);
-
+app.get('/incoming', incoming.view);
+app.get('/declineFavr', declineFavr.decline);
+app.get('/acceptFavr', acceptFavr.accept);
 
 
 http.createServer(app).listen(app.get('port'), function(){

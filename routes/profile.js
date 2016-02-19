@@ -1,6 +1,6 @@
-var data = require('../completed.json');
+var data = require('../data.json');
 
 exports.view = function(req, res) {
-	var name = req
-  	res.render('profile', data);
+	var completed = data['users'][0];
+  	res.render('profile', completed);
 };
