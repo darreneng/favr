@@ -16,24 +16,22 @@
   <body>
     {{> menu}}
 
+  	<div class="container">
 
-	<div class="container">
+      <h2>Offer a Favr</h2>
+      <h4> I want to do a favor for someone </h4>
 
-    <h2>Offer a Favr</h2>
-    <h4> I want to do a favor for someone </h4>
-
-    <div class="formcontainer">
-      <form class="form" action="/offerFavr" method="get"><br>
-        Who is this Favr for?<br>
-        <input type="text" name="name" maxlength="20" required><br><br>
-        What is this Favr?<br>
-        <input type="text" name="task" maxlength="20" required><br><br>
-        Complete by:<br>
-        <input type="datetime-local" name="date"><br><br>
-        <input type="submit" id="offer" value="Submit"/><br><br>
-      </form>
-    </div>
-
+      <div class="formcontainer">
+        <form class="form" action="/offerFavr" method="get"><br>
+          Who is this Favr for?<br>
+          <input type="text" name="name" maxlength="20" required><br><br>
+          What is this Favr?<br>
+          <input type="text" name="task" maxlength="20" required><br><br>
+          Complete by:<br>
+          <input type="datetime-local" name="date"><br><br>
+          <input type="submit" id="offer" value="Submit"/><br><br>
+        </form>
+      </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>

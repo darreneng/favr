@@ -14,38 +14,38 @@
   <body>
     {{> menu}}
 
-	<div class="container">
-  			<h1>Cam Newton</h1>
+  	<div class="container">
+    	<h1>Cam Newton</h1>
 
-    <div class="profile">
-      <img src="images/cam.png">
-    </div>
+      <div class="profile">
+        <img src="images/cam.png">
+      </div>
 
-<br>
+      <br>
 
-
-<h2>Completed Favrs</h2>
-    <div id="test"> </div>
-    <table class="table">
-      <thead>
-            <tr>
-              <th>Date</td>
-              <th>User</td>
-              <th>Task</td>
-            </tr>
-      </thead>
-      <tbody>
-        {{#each completed}}
-          <div class='favr' id="{{id}}">
-            <tr>
-              <td>{{date}}</td>
-              <td>{{name}}</td>
-              <td>{{task}}</td>
-            </tr>
-          </div>
-        {{/each}}
-    </tbody>
-  </table>
+      <h2>Completed Favrs</h2>
+          <div id="test"> </div>
+          <table class="table">
+            <thead>
+                  <tr>
+                    <th>Date</td>
+                    <th>User</td>
+                    <th>Task</td>
+                  </tr>
+            </thead>
+            <tbody>
+              {{#each completed}}
+                <div class='favr' id="{{id}}">
+                  <tr>
+                    <td>{{date}}</td>
+                    <td>{{name}}</td>
+                    <td>{{task}}</td>
+                  </tr>
+                </div>
+              {{/each}}
+          </tbody>
+        </table>
+      </div><!-- /container-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
