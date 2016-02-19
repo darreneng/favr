@@ -9,9 +9,7 @@ function initializePage() {
 	$('#offer').click(offerFavr);
 	$('#request').click(requestFavr);
 	$('.complete').click(completeFavr);
-
 }
-
 
 function deleteFavr(e){
 	var yes = confirm("This Favr will be deleted.");

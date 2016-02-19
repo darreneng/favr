@@ -18,10 +18,12 @@
 
 
 <body>
+ 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
+
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">FAVR</a>
+      <a class="navbar-brand" href="home">FAVR</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="profile">My Profile</a></li>
@@ -33,6 +35,9 @@
   </div>
 </nav>
 
+
+
+{{#if incoming}}
 <div class="container">
 
     <h4>Incoming Favrs</h4>
@@ -73,6 +78,7 @@
     </tbody>
   </table>
 </div>
+{{/if}}
 
 <div class="container">
 

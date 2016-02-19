@@ -23,3 +23,16 @@ function findAndRemove(array, property, value) {
     }    
   });
 }
+
+//Function to find index of JSON object in array
+ function findIndex(array, property, value) {
+ 	var toReturn = -1;
+ 	array.forEach(function(result, index) {
+ 		if(result[property] === value){
+ 			toReturn = index;
+ 			return index;
+ 		}
+ 	});
+ 	return toReturn;
+ }
+
