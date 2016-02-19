@@ -9,12 +9,12 @@ exports.offerFavr = function(req, res) {
     	weekday: "long", year: "numeric", month: "short",
 		day: "numeric", hour: "2-digit", minute: "2-digit"
 	};
-	findIndex(data['users'], "username", name);
-	if(findIndex == -1){
-		alert("Not a valid user. Please enter a valid user.");
+
+	var favr = {"name":"Cam Newton","task":task,"date":realdate.toLocaleTimeString("en-us", options)};
+	if(name === "Peyton Manning"){
+			data['users'][1]['incoming'].push(favr);
 	}
-	var favr = {"name":name,"task":task,"date":realdate.toLocaleTimeString("en-us", options)};
-	data['users'][0]['incoming'].push(favr);
+
 
 	var favrs = data['users'][0];
 

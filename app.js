@@ -24,6 +24,23 @@ var deletion = require('./routes/deleteFavr');
 var incoming = require('./routes/incoming');
 var declineFavr = require('./routes/declineFavr');
 var acceptFavr = require('./routes/acceptFavr');
+var submit = require('./routes/signUpSubmit');
+
+var offer2 = require('./routes/offer2');
+var profile2 = require('./routes/profile2');
+var request2 = require('./routes/request2');
+var completedFavrs2 = require('./routes/completedFavrs2');
+var home2 = require('./routes/home2');
+var offerSubmit2 = require('./routes/offerFavr2');
+var requestSubmit2 = require('./routes/requestFavr2');
+var deletion2 = require('./routes/deleteFavr2');
+var incoming2 = require('./routes/incoming2');
+var declineFavr2 = require('./routes/declineFavr2');
+var acceptFavr2 = require('./routes/acceptFavr2');
+
+
+
+
 
 
 var app = express();
@@ -54,6 +71,7 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', index.view);
 app.get('/project/:name', project.viewProject);
+
 app.get('/offer', offer.view);
 app.get('/profile', profile.view);
 app.get('/request', request.view);
@@ -67,6 +85,21 @@ app.get('/deleteFavr', deletion.deleteFavr);
 app.get('/incoming', incoming.view);
 app.get('/declineFavr', declineFavr.decline);
 app.get('/acceptFavr', acceptFavr.accept);
+app.get('/signUpSubmit', submit.signUp);
+
+
+app.get('/offer2', offer2.view);
+app.get('/profile2', profile2.view);
+app.get('/request2', request2.view);
+app.get('/completedFavrs2', completedFavrs2.addCompletedFavr);
+app.get('/home2', home2.view);
+app.get('/offerFavr2', offerSubmit2.offerFavr);
+app.get('/requestFavr2', requestSubmit2.requestFavr);
+app.get('/deleteFavr2', deletion2.deleteFavr);
+app.get('/incoming2', incoming2.view);
+app.get('/declineFavr2', declineFavr2.decline);
+app.get('/acceptFavr2', acceptFavr2.accept);
+
 
 
 http.createServer(app).listen(app.get('port'), function(){

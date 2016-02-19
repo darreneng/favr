@@ -1,6 +1,6 @@
 var data = require('../data.json');
 
-exports.requestFavr = function(req, res) {
+exports.offerFavr = function(req, res) {
 	var name = req.query.name;
 	var task = req.query.task;
 	var date = req.query.date;
@@ -9,14 +9,15 @@ exports.requestFavr = function(req, res) {
     	weekday: "long", year: "numeric", month: "short",
 		day: "numeric", hour: "2-digit", minute: "2-digit"
 	};
-	var favr = {"name":"Cam Newton","task":task,"date":realdate.toLocaleTimeString("en-us", options)};
-	if(name === "Peyton Manning"){
-			data['users'][1]['incoming'].push(favr);
+
+	var favr = {"name":"Peyton Manning","task":task,"date":realdate.toLocaleTimeString("en-us", options)};
+	if(name === "Cam Newton"){
+			data['users'][0]['incoming'].push(favr);
 	}
 
-	var favrs = data['users'][0];
+	var favrs = data['users'][1];
 
-  	res.render('home', favrs);
+  	res.render('home2', favrs);
 };
 
 function findIndex(array,property,value){

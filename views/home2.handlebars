@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Favr Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="../public/css/introHCI.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="js/jquery-1.11.0.js"> </script>
+ <!-- <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css" rel="stylesheet" />
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> -->
+  <script src="js/introHCI.js"> </script>
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="home2">Favr</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="profile2">My Profile</a></li>
+        <li class="active"><a href="home2" >Pending Favrs<span class="sr-only">(current)</span></a></li>
+        <li><a href="offer2">Offer a Favr</a></li>
+        <li><a href="request2">Request a Favr</a></li>
+        <li><a href="/">Logout</a></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search User">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+{{#if incoming}}
+<div class="container">
+
+    <h4>Incoming Favrs</h4>
+
+    <table class="table">
+      <thead>
+            <tr>
+              <th>Date</td>
+              <th>User</td>
+              <th>Task</td>
+            </tr>
+      </thead>
+      <tbody>
+        {{#each incoming}}
+          <div class='favr' id="{{id}}">
+            <tr>
+              <!--<td>{{month}}/{{day}}</td>-->
+              <td>{{date}}</td>
+              <td>{{name}}</td>
+              <td>{{task}}</td>
+
+              <form action ="/acceptFavr2" method = "get">
+                <input hidden type="text" name="date" value="{{date}}">
+                <input hidden type="text" name="name" value="{{name}}">
+                <input hidden type="text" name="task" value="{{task}}">
+                <input hidden type="text" name="id" value="{{id}}">
+              <td><input type="submit" class="accept" value="Accept" ></td>
+             </form>
+
+              <form action ="/declineFavr2" method = "get">
+                <input hidden type="text" name="name" value="{{name}}">
+              <td><input type ="submit" class="decline" value="Decline"></td>
+            </form>
+
+            </tr>
+          </div>
+        {{/each}}
+    </tbody>
+  </table>
+</div>
+{{/if}}
+
+<div class="container">
+
+    <h4>Pending Favrs</h4>
+
+    <table class="table">
+      <thead>
+            <tr>
+              <th>Date</td>
+              <th>User</td>
+              <th>Task</td>
+              <th>Is this Favr complete?</td>
+            </tr>
+      </thead>
+      <tbody>
+        {{#each favrs}}
+          <div class='favr' id="{{id}}">
+            <tr>
+              <!--<td>{{month}}/{{day}}</td>-->
+              <td>{{date}}</td>
+              <td>{{name}}</td>
+              <td>{{task}}</td>
+
+              <form action ="/completedFavrs2" method = "get">
+                <input hidden type="text" name="date" value="{{date}}">
+                <input hidden type="text" name="name" value="{{name}}">
+                <input hidden type="text" name="task" value="{{task}}">
+                <input hidden type="text" name="id" value="{{id}}">
+              <td><input type="submit" class="complete" value="Completed" ></td>
+             </form>
+
+              <form action ="/deleteFavr2" method = "get">
+                <input hidden type="text" name="name" value="{{name}}">
+              <td><input type ="submit" class="delete" value="Delete"></td>
+            </form>
+
+            </tr>
+          </div>
+        {{/each}}
+    </tbody>
+  </table>
+</div>
+
+
+</body>
+</html>

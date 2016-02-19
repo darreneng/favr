@@ -14,13 +14,17 @@
     <body>
       <div class = "container">
         <h1>Favr Fam</h1>
-        <form name="login">
+        <form name="login" action = "/home" method ="get">
             Username <input type="text" name="userid" required/> <br><br>
             Password <input type="password" name="pswrd" required/> <br> <br>
-            <input type="button" onclick="check(this.form)" value="Login"/>
+            <input type="submit"  value="Login as Cam Newton"/>
+       </form> <br> 
+
+         <form name="login" action = "/home2" method ="get">
+         <input type="submit"  value="Login as Peyton Manning"/><br><br>
 
             <input type="button" onclick="location.href='signup'" value="Sign-Up"/>
-        </form>
+        
       </div>
         <script language="javascript">
             function check(form) { /*function to check userid & password*/
@@ -32,6 +36,6 @@
                     alert("Incorrect Username or Password")/*displays error message*/
                 }
             }
-        </script>
+        </script> 
     </body>
 </html>

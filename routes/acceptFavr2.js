@@ -6,18 +6,18 @@ exports.accept = function(req, res){
 	var task = req.query.task;
 	var date = req.query.date;
 	var favr = {"name":name,"task":task,"date":date};
-  var favr2 ={"name":"Cam Newton", "task":task, "date":date}
-	data['users'][0]['favrs'].push(favr);
+	var favr2 ={"name": "Peyton Manning", "task":task, "date":date}
+  data['users'][1]['favrs'].push(favr);
 
-  if(name === "Peyton Manning"){
-   data['users'][1]['favrs'].push(favr2); 
+  if(name === "Cam Newton"){
+   data['users'][0]['favrs'].push(favr2); 
   }
 
-	var favrs = data['users'][0];
+  var favrs = data['users'][1];
 
-  findAndRemove(data['users'][0]['incoming'], "name", name);	
+  findAndRemove(data['users'][1]['incoming'], "name", name);	
   
-  res.render('home', favrs);
+  res.render('home2', favrs);
 }
 
 //Function to remove JSON object from array
