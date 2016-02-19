@@ -1,19 +1,16 @@
 var data = require('../data.json');
+var userdata = require('../public/js/userdata');
 
 exports.decline = function(req, res){
-  var name = req.query.name;
-  findAndRemove(data['users'][0]['incoming'], "name", name);	
-  
-  var favrs = data['users'][0];
+	var id = parseInt(req.query.id);
+	var user_id = 1;
+	var favrs = data['users'][user_id]['favrs'];
+  // Delete favr from list of favrs
+  for (i = 0; i < favrs.length; i++) {
+		if (favrs[i] === id) {
+			favrs.splice(i, 1);
+		}
+  }
 
-  res.render('home', favrs);
-}
-
-//Function to remove JSON object from array
-function findAndRemove(array, property, value) {
-  array.forEach(function(result, index) {
-    if(result[property] === value) {
-      array.splice(index, 1);
-    }    
-  });
+  res.render('home', userdata.getUserData(data, user_id));
 }

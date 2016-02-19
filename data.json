@@ -4,81 +4,31 @@
         "id": 0,
         "username": "Aaron Rodgers",
         "password": "packers",
-        "favrs": [
-
-        ]
+        "favrs": []
       },
       {
       "id": 1,
       "username": "Cam Newton",
       "password": "panthers",
-      "favors": [0,1,2,3,4,5,6],
-      "favrs": [
-        {
-          "name": "Mark B.",
-          "task": "Cook Dinner",
-          "id": "favr1",
-          "date": "Saturday, Feb 27, 2016 4:45 PM"
-        },
-        {
-          "name": "Tim K.",
-          "task": "Do Dishes",
-          "id": "favr2",
-          "date": "Thursday, Feb 18, 2016 5:00 PM"
-        },
-        {
-          "name": "Ron W.",
-          "task": "Clean Clothes",
-          "id": "favr3",
-          "date": "Friday, Feb 19, 2016 9:00 AM"
-        },
-        {
-          "name": "Latavius L.",
-          "task": "Get Groceries",
-          "id": "favr4",
-          "date": "Sunday, Feb 21, 2016 12:00 PM"
-        }
-      ],
-      "completed": [
-        {
-          "name": "Tyler T.",
-          "task": "Serenade",
-          "id": "favr5",
-          "date": "Sunday, Feb 28, 2016 4:00 PM"
-        }
-      ],
-      "incoming": [
-        {
-          "name": "Adam C.",
-          "task": "Fix cupboard",
-          "id": "favr6",
-          "date": "Tuesday, Mar 1, 2016 6:00 PM"
-        }
-      ]
+      "favrs": [0,1,2,3,4,5,6]
     },
     {
       "id": 2,
       "username": "Peyton Manning",
       "password": "broncos",
-      "favrs": [
-
-      ]
+      "favrs": []
     },
     {
       "id": 3,
       "username": "Russell Wilson",
       "password": "seahawks",
-      "favrs": [
-
-      ]
+      "favrs": []
     },
     {
       "id": 4,
       "username": "Tom Brady",
       "password": "patriots",
-      "favrs": [
-
-      ]
+      "favrs": []
     }
   ],
   "favrs":[

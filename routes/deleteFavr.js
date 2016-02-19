@@ -1,23 +1,20 @@
 var data = require('../data.json');
+var userdata = require('../public/js/userdata');
 
 exports.deleteFavr = function(req, res) {
-	var name = req.query.name;
+	var id = req.query.id;
+	var user_id = 1;
+	var favrs = data['users'][user_id]['favors'];
 
-	var favrs = data['users'][0];
+	findAndRemove(favrs, id);
 
-
-	findAndRemove(data['users'][0]['favrs'], "name", name);
-
-	res.render('home', favrs);
+  res.render('home', userdata.getUserData(data, user_id));
 }
 
-
-//Function to remove JSON object from array
-function findAndRemove(array, property, value) {
+var findAndRemove = function(array, value) {
   array.forEach(function(result, index) {
-    if(result[property] === value) {
-      array.splice(index, 1);
-    }    
+		if (result == value) {
+			array.splice(index, 1);
+		}
   });
-}
-
+};

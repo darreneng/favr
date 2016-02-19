@@ -1,7 +1,7 @@
 exports.getUserData = function(data, user_id) {
   var user = data['users'][user_id]; // Specific user in database
   var user_data = {}; // data to pass to view
-  var user_favrs = user['favors']; // All favrs related to user
+  var user_favrs = user['favrs']; // All favrs related to user
   var favrs = data['favrs']; // All favrs from database
 
   // Get a list of pending favors from and to
@@ -37,6 +37,7 @@ exports.getUserData = function(data, user_id) {
   user_data.favrs_incoming = favrs_incoming;
   user_data.favrs_completed = favrs_completed;
   user_data.username = user.username;
+  //user_data.id = user.id;
   console.log(favrs_incoming);
   return user_data;
 };

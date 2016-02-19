@@ -1,37 +1,12 @@
 var data = require('../data.json');
+var userdata = require('../public/js/userdata');
 
 
 exports.accept = function(req, res){
-  var name = req.query.name;
-	var task = req.query.task;
-	var date = req.query.date;
-	var favr = {"name":name,"task":task,"date":date};
-	data['users'][0]['favrs'].push(favr);
+  var id = req.query.id;
 
-	var favrs = data['users'][0];
+  data['favrs'][id]['accepted'] = true;
+  var user_id = 1;
 
-  findAndRemove(data['users'][0]['incoming'], "name", name);
-
-  res.render('home', favrs);
+  res.render('home', userdata.getUserData(data, user_id));
 }
-
-//Function to remove JSON object from array
-function findAndRemove(array, property, value) {
-  array.forEach(function(result, index) {
-    if(result[property] === value) {
-      array.splice(index, 1);
-    }
-  });
-}
-
-//Function to find index of JSON object in array
- function findIndex(array, property, value) {
- 	var toReturn = -1;
- 	array.forEach(function(result, index) {
- 		if(result[property] === value){
- 			toReturn = index;
- 			return index;
- 		}
- 	});
- 	return toReturn;
- }

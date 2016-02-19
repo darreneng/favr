@@ -22,7 +22,7 @@ exports.offerFavr = function(req, res) {
 			"task":task,"date":realdate.toLocaleTimeString("en-us", options),
 			"completed":false,"accepted":true}; // CHANGE ACCEPTED TO FALSE???
 	data['favrs'].push(favr);
-	data['users'][user_id]['favors'].push(favr_id); // Change to favrs
+	data['users'][user_id]['favrs'].push(favr_id); // Change to favrs
 
   res.render('home', userdata.getUserData(data, user_id));
 };

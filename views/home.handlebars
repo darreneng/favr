@@ -42,15 +42,12 @@
                   <td>{{task}}</td>
 
                   <form action ="/acceptFavr" method = "get">
-                    <input hidden type="text" name="date" value="{{date}}">
-                    <input hidden type="text" name="name" value="{{name}}">
-                    <input hidden type="text" name="task" value="{{task}}">
-                    <input hidden type="text" name="id" value="{{id}}">
+                    <input hidden type="number" name="id" value={{id}}>
                   <td><input type="submit" class="accept" value="Accept" ></td>
                  </form>
 
                   <form action ="/declineFavr" method = "get">
-                    <input hidden type="text" name="name" value="{{name}}">
+                    <input hidden type="number" name="id" value={{id}}>
                   <td><input type ="submit" class="decline" value="Decline"></td>
                 </form>
 
