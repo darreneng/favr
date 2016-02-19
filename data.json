@@ -1,6 +1,7 @@
 {
   "users":[
       {
+      "id": 1,
       "username": "Cam Newton",
       "password": "panthers",
       "favrs": [
@@ -37,15 +38,22 @@
           "date": "Sunday, Feb 28, 2016 4:00 PM"
         }
       ],
-      "incoming":[
+      "incoming": [
         {
-          "name": "Adam C.", 
+          "name": "Adam C.",
           "task": "Fix cupboard",
           "id": "favr6",
           "date": "Tuesday, Mar 1, 2016 6:00 PM"
         }
       ]
+    },
+    {
+      "id": 2,
+      "username": "Peyton Manning",
+      "password": "broncos",
+      "favrs": [
 
+      ]
     }
   ]
 }
