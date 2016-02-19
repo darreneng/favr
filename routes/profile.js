@@ -1,6 +1,8 @@
 var data = require('../data.json');
+var userdata = require('../public/js/userdata');
 
 exports.view = function(req, res) {
-	var completed = data['users'][0];
-  	res.render('profile', completed);
+	var user_id = 1;
+	var user = userdata.getUserData(data, user_id);
+  res.render('profile', user);
 };

@@ -1,0 +1,22 @@
+<div class='favr' id="{{id}}">
+  <tr>
+    <!--<td>{{month}}/{{day}}</td>-->
+    <td>{{date}}</td>
+    <td>{{name}}</td>
+    <td>{{task}}</td>
+
+    <form action ="/completedFavrs" method = "get">
+      <input hidden type="text" name="date" value="{{date}}">
+      <input hidden type="text" name="name" value="{{name}}">
+      <input hidden type="text" name="task" value="{{task}}">
+      <input hidden type="text" name="id" value="{{id}}">
+    <td><input type="submit" class="complete" value="Completed" ></td>
+   </form>
+
+    <form action ="/deleteFavr" method = "get">
+      <input hidden type="text" name="name" value="{{name}}">
+    <td><input type ="submit" class="delete" value="Delete"></td>
+  </form>
+
+  </tr>
+</div>

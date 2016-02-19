@@ -1,4 +1,5 @@
 var data = require('../data.json');
+var userdata = require('../public/js/userdata');
 
 exports.requestFavr = function(req, res) {
 	var name = req.query.name;
@@ -13,12 +14,19 @@ exports.requestFavr = function(req, res) {
 	if(findIndex == -1){
 		alert("Not Valid User");
 	}
-	var favr = {"name":name,"task":task,"date":realdate.toLocaleTimeString("en-us", options)};
-	data['users'][0]['incoming'].push(favr);
 
-	var favrs = data['users'][0];
+	// Create favr object and add to database
+	var requestee_id = 4;
+	var user_id = 1;
+	var favr_id = data['favrs'].length;
+	var favr = {"id":favr_id,"name":name,"from":requestee_id,"to":user_id,
+			"task":task,"date":realdate.toLocaleTimeString("en-us", options),
+			"completed":false,"accepted":true}; // CHANGE ACCEPTED TO FALSE???
+	data['favrs'].push(favr);
+	data['users'][user_id]['favors'].push(favr_id); // Change to favrs
 
-  	res.render('home', favrs);
+	// Redirect to home
+  res.render('home', userdata.getUserData(data, user_id));
 };
 
 function findIndex(array,property,value){

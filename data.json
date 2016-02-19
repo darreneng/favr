@@ -1,9 +1,18 @@
 {
   "users":[
       {
+        "id": 0,
+        "username": "Aaron Rodgers",
+        "password": "packers",
+        "favrs": [
+
+        ]
+      },
+      {
       "id": 1,
       "username": "Cam Newton",
       "password": "panthers",
+      "favors": [0,1,2,3,4,5,6],
       "favrs": [
         {
           "name": "Mark B.",
@@ -54,6 +63,94 @@
       "favrs": [
 
       ]
+    },
+    {
+      "id": 3,
+      "username": "Russell Wilson",
+      "password": "seahawks",
+      "favrs": [
+
+      ]
+    },
+    {
+      "id": 4,
+      "username": "Tom Brady",
+      "password": "patriots",
+      "favrs": [
+
+      ]
+    }
+  ],
+  "favrs":[
+    {
+      "id": 0,
+      "from": 4,
+      "to": 2,
+      "accepted": true,
+      "completed": false,
+      "name": "Susan B.",
+      "task": "Make Dinner",
+      "date": "Saturday, Feb 27, 2016 4:45 PM"
+    },
+    {
+      "id": 1,
+      "from": 1,
+      "to": 2,
+      "accepted": true,
+      "completed": false,
+      "name": "Mark B.",
+      "task": "Cook Dinner",
+      "date": "Saturday, Feb 27, 2016 4:45 PM"
+    },
+    {
+      "id": 2,
+      "from": 2,
+      "to": 1,
+      "accepted": true,
+      "completed": false,
+      "name": "Tim K.",
+      "task": "Do Dishes",
+      "date": "Thursday, Feb 18, 2016 5:00 PM"
+    },
+    {
+      "id": 3,
+      "from": 1,
+      "to": 3,
+      "accepted": true,
+      "completed": false,
+      "name": "Ron W.",
+      "task": "Clean Clothes",
+      "date": "Friday, Feb 19, 2016 9:00 AM"
+    },
+    {
+      "id": 4,
+      "from": 3,
+      "to": 1,
+      "accepted": true,
+      "completed": false,
+      "name": "Latavius L.",
+      "task": "Get Groceries",
+      "date": "Sunday, Feb 21, 2016 12:00 PM"
+    },
+    {
+      "id": 5,
+      "from": 1,
+      "to": 5,
+      "accepted": true,
+      "completed": true,
+      "name": "Tyler T.",
+      "task": "Serenade",
+      "date": "Sunday, Feb 28, 2016 4:00 PM"
+    },
+    {
+      "id": 6,
+      "from": 1,
+      "to": 4,
+      "accepted": false,
+      "completed": false,
+      "name": "Adam C.",
+      "task": "Fix cupboard",
+      "date": "Tuesday, Mar 1, 2016 6:00 PM"
     }
   ]
 }

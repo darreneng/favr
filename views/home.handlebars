@@ -21,90 +21,85 @@
 
  {{> menu}}
 
-{{#if incoming}}
-<div class="container">
+  <div class="container">
+    {{#if favrs_incoming}}
+        <h4>incoming favrs</h4>
+        <table class="table">
+          <thead>
+                <tr>
+                  <th>Date</td>
+                  <th>User</td>
+                  <th>Task</td>
+                </tr>
+          </thead>
+          <tbody>
+            {{#each favrs_incoming}}
+              <div class='favr' id="{{id}}">
+                <tr>
+                  <!--<td>{{month}}/{{day}}</td>-->
+                  <td>{{date}}</td>
+                  <td>{{name}}</td>
+                  <td>{{task}}</td>
 
-    <h4>Incoming Favrs</h4>
+                  <form action ="/acceptFavr" method = "get">
+                    <input hidden type="text" name="date" value="{{date}}">
+                    <input hidden type="text" name="name" value="{{name}}">
+                    <input hidden type="text" name="task" value="{{task}}">
+                    <input hidden type="text" name="id" value="{{id}}">
+                  <td><input type="submit" class="accept" value="Accept" ></td>
+                 </form>
 
-    <table class="table">
-      <thead>
-            <tr>
-              <th>Date</td>
-              <th>User</td>
-              <th>Task</td>
-            </tr>
-      </thead>
-      <tbody>
-        {{#each incoming}}
-          <div class='favr' id="{{id}}">
-            <tr>
-              <!--<td>{{month}}/{{day}}</td>-->
-              <td>{{date}}</td>
-              <td>{{name}}</td>
-              <td>{{task}}</td>
+                  <form action ="/declineFavr" method = "get">
+                    <input hidden type="text" name="name" value="{{name}}">
+                  <td><input type ="submit" class="decline" value="Decline"></td>
+                </form>
 
-              <form action ="/acceptFavr" method = "get">
-                <input hidden type="text" name="date" value="{{date}}">
-                <input hidden type="text" name="name" value="{{name}}">
-                <input hidden type="text" name="task" value="{{task}}">
-                <input hidden type="text" name="id" value="{{id}}">
-              <td><input type="submit" class="accept" value="Accept" ></td>
-             </form>
+                </tr>
+              </div>
+            {{/each}}
+        </tbody>
+      </table>
+    {{/if}}
 
-              <form action ="/declineFavr" method = "get">
-                <input hidden type="text" name="name" value="{{name}}">
-              <td><input type ="submit" class="decline" value="Decline"></td>
-            </form>
+    {{#if favrs_from}}
+      <h4>pending favrs I owe</h4>
+      <table class="table">
+        <thead>
+              <tr>
+                <th>Date</td>
+                <th>User</td>
+                <th>Task</td>
+                <th>Is this Favr complete?</td>
+              </tr>
+        </thead>
+        <tbody>
+          {{#each favrs_from}}
+            {{> pending}}
+          {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
 
-            </tr>
-          </div>
-        {{/each}}
-    </tbody>
-  </table>
-</div>
-{{/if}}
+  {{#if favrs_to}}
+      <h4>pending favrs owed to me</h4>
+      <table class="table">
+        <thead>
+              <tr>
+                <th>Date</td>
+                <th>User</td>
+                <th>Task</td>
+                <th>Is this Favr complete?</td>
+              </tr>
+        </thead>
+        <tbody>
+          {{#each favrs_to}}
+            {{> pending}}
+          {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
 
-<div class="container">
-
-    <h4>Pending Favrs</h4>
-
-    <table class="table">
-      <thead>
-            <tr>
-              <th>Date</td>
-              <th>User</td>
-              <th>Task</td>
-              <th>Is this Favr complete?</td>
-            </tr>
-      </thead>
-      <tbody>
-        {{#each favrs}}
-          <div class='favr' id="{{id}}">
-            <tr>
-              <!--<td>{{month}}/{{day}}</td>-->
-              <td>{{date}}</td>
-              <td>{{name}}</td>
-              <td>{{task}}</td>
-
-              <form action ="/completedFavrs" method = "get">
-                <input hidden type="text" name="date" value="{{date}}">
-                <input hidden type="text" name="name" value="{{name}}">
-                <input hidden type="text" name="task" value="{{task}}">
-                <input hidden type="text" name="id" value="{{id}}">
-              <td><input type="submit" class="complete" value="Completed" ></td>
-             </form>
-
-              <form action ="/deleteFavr" method = "get">
-                <input hidden type="text" name="name" value="{{name}}">
-              <td><input type ="submit" class="delete" value="Delete"></td>
-            </form>
-
-            </tr>
-          </div>
-        {{/each}}
-    </tbody>
-  </table>
-</div>
+  </div> <!-- end container -->
 
 
 </body>

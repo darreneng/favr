@@ -2,7 +2,7 @@ var data = require('../data.json');
 
 
 exports.accept = function(req, res){
-  	var name = req.query.name;
+  var name = req.query.name;
 	var task = req.query.task;
 	var date = req.query.date;
 	var favr = {"name":name,"task":task,"date":date};
@@ -10,8 +10,8 @@ exports.accept = function(req, res){
 
 	var favrs = data['users'][0];
 
-  findAndRemove(data['users'][0]['incoming'], "name", name);	
-  
+  findAndRemove(data['users'][0]['incoming'], "name", name);
+
   res.render('home', favrs);
 }
 
@@ -20,7 +20,7 @@ function findAndRemove(array, property, value) {
   array.forEach(function(result, index) {
     if(result[property] === value) {
       array.splice(index, 1);
-    }    
+    }
   });
 }
 
@@ -35,4 +35,3 @@ function findAndRemove(array, property, value) {
  	});
  	return toReturn;
  }
-
