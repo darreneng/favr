@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+var mongoose = require('mongoose');
 
 //Routes
 var index = require('./routes/index'); //Login page
@@ -15,7 +16,7 @@ var profile = require('./routes/profile'); //Profile page
 var request = require('./routes/request'); //Request a Favr page
 var data = require('./routes/data'); //data JSON
 var completedFavrs = require('./routes/completedFavrs'); //Upon completing a Favr
-var home = require('./routes/home'); //Home page 
+var home = require('./routes/home'); //Home page
 var signup = require('./routes/signup'); //Signup page
 var offerSubmit = require('./routes/offerFavr'); //Upon clicking submit in Offer a Favr
 var requestSubmit = require('./routes/requestFavr'); //Upon clicking submit in Request a Favr
