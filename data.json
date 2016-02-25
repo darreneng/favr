@@ -4,33 +4,38 @@
         "id": 0,
         "username": "Aaron Rodgers",
         "password": "packers",
-        "favrs": []
+        "favrs": [0,1,2,3,4,5,6],
+        "active": false
       },
       {
-      "id": 1,
-      "username": "Cam Newton",
-      "password": "panthers",
-      "favrs": [0,1,2,3,4,5,6]
-    },
-    {
-      "id": 2,
-      "username": "Peyton Manning",
-      "password": "broncos",
-      "favrs": []
-    },
-    {
-      "id": 3,
-      "username": "Russell Wilson",
-      "password": "seahawks",
-      "favrs": []
-    },
-    {
-      "id": 4,
-      "username": "Tom Brady",
-      "password": "patriots",
-      "favrs": []
-    }
-  ],
+        "id": 1,
+        "username": "Cam Newton",
+        "password": "panthers",
+        "favrs": [0,1,2,3,4,5,6],
+        "active": false
+      },
+      {
+        "id": 2,
+        "username": "Peyton Manning",
+        "password": "broncos",
+        "favrs": [0,1,2,3,4,5,6],
+        "active": false
+      },
+      {
+        "id": 3,
+        "username": "Russell Wilson",
+        "password": "seahawks",
+        "favrs": [],
+        "active": false
+      },
+      {
+        "id": 4,
+        "username": "Tom Brady",
+        "password": "patriots",
+        "favrs": [],
+        "active": false
+      }
+],
   "favrs":[
     {
       "id": 0,
