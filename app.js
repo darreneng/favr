@@ -8,21 +8,21 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-
-var index = require('./routes/index');
-var offer = require('./routes/offer');
-var profile = require('./routes/profile');
-var request = require('./routes/request');
-var data = require('./routes/data');
-var completedFavrs = require('./routes/completedFavrs');
-var home = require('./routes/home');
-var signup = require('./routes/signup');
-var offerSubmit = require('./routes/offerFavr');
-var requestSubmit = require('./routes/requestFavr');
-var deletion = require('./routes/deleteFavr');
-var incoming = require('./routes/incoming');
-var declineFavr = require('./routes/declineFavr');
-var acceptFavr = require('./routes/acceptFavr');
+//Routes
+var index = require('./routes/index'); //Login page
+var offer = require('./routes/offer'); //Offer a Favr page
+var profile = require('./routes/profile'); //Profile page
+var request = require('./routes/request'); //Request a Favr page
+var data = require('./routes/data'); //data JSON
+var completedFavrs = require('./routes/completedFavrs'); //Upon completing a Favr
+var home = require('./routes/home'); //Home page 
+var signup = require('./routes/signup'); //Signup page
+var offerSubmit = require('./routes/offerFavr'); //Upon clicking submit in Offer a Favr
+var requestSubmit = require('./routes/requestFavr'); //Upon clicking submit in Request a Favr
+var deletion = require('./routes/deleteFavr'); //Upon deleting a Favr
+var incoming = require('./routes/incoming'); //Upon receiving a Favr
+var declineFavr = require('./routes/declineFavr'); //Upon declining a Favr
+var acceptFavr = require('./routes/acceptFavr'); //Upon accepting a Favr
 
 
 var app = express();
@@ -50,7 +50,7 @@ if ('development' == app.get('env')) {
 }
 
 
-// Add routes here
+//Get Routes
 app.get('/', index.view);
 app.get('/offer', offer.view);
 app.get('/profile', profile.view);
@@ -65,6 +65,9 @@ app.get('/deleteFavr', deletion.deleteFavr);
 app.get('/incoming', incoming.view);
 app.get('/declineFavr', declineFavr.decline);
 app.get('/acceptFavr', acceptFavr.accept);
+
+//Post Routes
+app.post('/', index.addUser);
 
 
 http.createServer(app).listen(app.get('port'), function(){
