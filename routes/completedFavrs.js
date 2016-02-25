@@ -1,28 +1,10 @@
 var data = require("../data.json");
+var userdata = require('../public/js/userdata');
 
 
 exports.addCompletedFavr = function(req, res) {
-	var name = req.query.name;
-	var task = req.query.task;
-	var date = req.query.date;
-	var favr = {"name":name,"task":task,"date":date};
-	data['users'][0]['completed'].push(favr);
-
-	var favrs = data['users'][0];
-
-	findAndRemove(data['users'][0]['favrs'], "name", name);
-
-
-	res.render('home', favrs);
+	var id = req.query.id;
+  data['favrs'][id]['completed'] = true;
+	var user_id = 1;
+  res.render('home', userdata.getUserData(data, user_id));
 }
-
-
-//Function to remove JSON object from array
-function findAndRemove(array, property, value) {
-  array.forEach(function(result, index) {
-    if(result[property] === value) {
-      array.splice(index, 1);
-    }    
-  });
-}
-
