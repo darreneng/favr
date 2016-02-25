@@ -23,6 +23,7 @@ var deletion = require('./routes/deleteFavr'); //Upon deleting a Favr
 var incoming = require('./routes/incoming'); //Upon receiving a Favr
 var declineFavr = require('./routes/declineFavr'); //Upon declining a Favr
 var acceptFavr = require('./routes/acceptFavr'); //Upon accepting a Favr
+var authenticate = require('./routes/authenticate');
 
 
 var app = express();
@@ -68,6 +69,7 @@ app.get('/acceptFavr', acceptFavr.accept);
 
 //Post Routes
 app.post('/', index.addUser);
+app.post('/authenticate', authenticate.login);
 
 
 http.createServer(app).listen(app.get('port'), function(){

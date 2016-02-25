@@ -8,18 +8,26 @@
         <script src="js/jquery-1.11.0.js"> </script>
         <script src="js/introHCI.js"> </script>    
     </head>
+
     <body>
       <div class = "container">
-        <h1>Favr Fam</h1>
-        <form name="login">
-            Username <input type="text" name="userid" required/> <br><br>
-            Password <input type="password" name="pswrd" required/> <br> <br>
-            <input type="button" onclick="check(this.form)" value="Login"/>
 
-            <input type="button" onclick="location.href='signup'" value="Sign-Up"/>
+        <h1>Favr Fam</h1>
+        {{#if message}}
+        <h4>*Invalid username and/or password </h4>
+        {{/if}}
+
+        <!-- action='/authenticate', method = 'post' -->
+        <form id='login' action='/authenticate', method = 'post'>
+            Username <input type="text" name="username" required/> <br><br>
+            Password <input type="password" name="password" required/> <br> <br>
+            <input type="submit" value="Login"/>
+
+            <input type="button" onclick="location.href='signup'" value="Sign Up"/>
         </form>
+
       </div>
-        <script language="javascript">
+        <!--<script language="javascript">
             function check(form) { /*function to check userid & password*/
                 /*the following code checkes whether the entered userid and password are matching*/
                 if(form.userid.value == "Cam Newton" && form.pswrd.value == "panthers") {
@@ -29,6 +37,6 @@
                     alert("Incorrect Username or Password")/*displays error message*/
                 }
             }
-        </script>
+        </script>-->
     </body>
 </html>
