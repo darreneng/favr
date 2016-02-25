@@ -38,3 +38,8 @@
 	height: 600px;
 	width: 600px;
 }
+
+/* Compensate for navbar height */
+body {
+	padding-top: 70px;
+}
