@@ -25,6 +25,7 @@ var incoming = require('./routes/incoming'); //Upon receiving a Favr
 var declineFavr = require('./routes/declineFavr'); //Upon declining a Favr
 var acceptFavr = require('./routes/acceptFavr'); //Upon accepting a Favr
 var authenticate = require('./routes/authenticate');
+var signup2 = require('./routes/signup2'); //Alternative signup page
 
 
 var app = express();
@@ -68,6 +69,8 @@ app.get('/incoming', incoming.view);
 app.get('/declineFavr', declineFavr.decline);
 app.get('/acceptFavr', acceptFavr.accept);
 app.get('/authenticate', authenticate.view);
+app.get('/signup2', signup2.view);
+
 
 //Post Routes
 app.post('/', index.addUser);
