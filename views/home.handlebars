@@ -5,12 +5,8 @@
   <title>Favr Home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<<<<<<< HEAD
-=======
   <link rel="stylesheet" type="text/css" href="css/introHCI.css">
->>>>>>> upstream/master
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="js/jquery-1.11.0.js"> </script>
@@ -74,10 +70,14 @@
         </thead>
         <tbody>
           {{#each favrs_from}}
-            {{> pending}}
+              {{> pending}}
           {{/each}}
       </tbody>
     </table>
+    {{else}}
+    <br><br>
+    <h4><i> You currently do not owe anyone any Favrs </i></h4>
+    <br><br>
   {{/if}}
 
 
@@ -94,13 +94,15 @@
         </thead>
         <tbody>
           {{#each favrs_to}}
-            {{> pending}}
+              {{> pending}}
           {{/each}}
       </tbody>
     </table>
+    {{else}}
+    <h4><i> No one currently owes you any Favrs <i></h4>
   {{/if}}
 
-  </div> <!-- end container -->
+  </div> 
 
 
 </body>

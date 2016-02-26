@@ -3,6 +3,30 @@ var userdata = require('../public/js/userdata');
 
 exports.requestFavr = function(req, res) {
 	var name = req.query.name;
+
+	//Find the recipient id
+	var recipient_id = -1;
+	for(var j = 0; j < data['users'].length;j++){
+		if(data['users'][j]['username'] == name){
+			recipient_id = data['users'][j]['id'];
+		}
+	}
+
+	//No such user exists, render an error message
+	if(recipient_id == -1){
+		var message = {"error" : true};
+		res.render('request', message);
+		return;
+	}
+
+	//Find the user_id currently logged on
+	var user_id = -1;
+	for(var i = 0; i < data['users'].length; i++){
+		if(data['users'][i]['active']){
+			user_id = i;
+		}
+	}
+
 	var task = req.query.task;
 	var date = req.query.date;
 	var realdate = new Date(date);
@@ -10,32 +34,18 @@ exports.requestFavr = function(req, res) {
     	weekday: "long", year: "numeric", month: "short",
 		day: "numeric", hour: "2-digit", minute: "2-digit"
 	};
-	findIndex(data['users'], "username", name);
-	if(findIndex == -1){
-		alert("Not Valid User");
-	}
-
-	// Create favr object and add to database
-	var requestee_id = 4;
-	var user_id = 1;
 	var favr_id = data['favrs'].length;
-	var favr = {"id":favr_id,"name":name,"from":requestee_id,"to":user_id,
+
+	// Create the new favr object
+	var favr = {"id":favr_id,"name":name,"from":recipient_id,"to":user_id,
 			"task":task,"date":realdate.toLocaleTimeString("en-us", options),
-			"completed":false,"accepted":true}; // CHANGE ACCEPTED TO FALSE???
+			"completed":false,"accepted":false}; 
+
 	data['favrs'].push(favr);
-	data['users'][user_id]['favrs'].push(favr_id); // Change to favrs
+	data['users'][user_id]['favrs'].push(favr_id);
+	data['users'][recipient_id]['favrs'].push(favr_id);
 
 	// Redirect to home
   res.render('home', userdata.getUserData(data, user_id));
 };
 
-function findIndex(array,property,value){
-	var toReturn = -1;
-	array.forEach(function(result, index){
-		if(result[property] == value){
-			toReturn = index;
-			return index;
-		}
-	});
-		return toReturn;
-}

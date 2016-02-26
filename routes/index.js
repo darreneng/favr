@@ -5,7 +5,7 @@ exports.view = function(req, res){
 	for(var i = 0; i < data['users'].length; i++){
 		data['users'][i]['active'] = false;
 	}
- 	res.render('index', data);
+ 	res.render('index');
 };
 
 //Add the user to the JSON
