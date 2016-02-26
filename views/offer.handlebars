@@ -21,6 +21,11 @@
       <h2>Offer a Favr</h2>
       <h4> I want to do a favor for someone </h4>
 
+      {{#if error}}
+        <br>
+        <h4><b><i> *This user does not exist </i></b></h4>
+      {{/if}}
+
       <div class="formcontainer">
         <form class="form" action="/offerFavr" method="get"><br>
           Who is this Favr for?<br>

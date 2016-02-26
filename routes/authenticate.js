@@ -1,6 +1,15 @@
 var data = require('../data.json');
 var userdata = require('../public/js/userdata');
 
+//Render index and set all uesrs to inactive
+exports.view = function(req,res){
+for(var i = 0; i < data['users'].length; i++){
+		data['users'][i]['active'] = false;
+	}
+ 	res.render('index');
+}
+
+//Check login validation and render the appropriate page
 exports.login = function(req, res){
 
 	var username = req.body.username;
@@ -21,20 +30,3 @@ exports.login = function(req, res){
 
   	res.render('index', error);
 };
-
-// //Add the user to the JSON
-// exports.addUser = function(req,res){
-	
-// 	//JSON fields
-// 	var username = req.body.name;
-// 	var password = req.body.password;
-// 	var id = data['users'].length;
-
-// 	//Create JSON
-// 	var newUser = {"id": id, "username": username, "password": password, "favrs": []};
-
-// 	//Push to data
-// 	data['users'].push(newUser);
-
-// 	res.render('index');
-// }

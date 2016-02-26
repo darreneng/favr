@@ -5,7 +5,7 @@ exports.view = function(req, res){
 	for(var i = 0; i < data['users'].length; i++){
 		data['users'][i]['active'] = false;
 	}
- 	res.render('index', data);
+ 	res.render('index');
 };
 
 //Add the user to the JSON
@@ -17,7 +17,7 @@ exports.addUser = function(req,res){
 	var id = data['users'].length;
 
 	//Create JSON
-	var newUser = {"id": id, "username": username, "password": password, "favrs": [], "active": false};
+	var newUser = {"id": id, "username": username, "password": password, "favrs": [], "active": false, "img":"images/stock.png"};
 
 	//Push to data
 	data['users'].push(newUser);

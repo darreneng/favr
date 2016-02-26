@@ -10,8 +10,8 @@ $(document).ready(function() {
 
 function initializePage() {
 	$('.delete').click(deleteFavr);
-	$('#offer').click(offerFavr);
-	$('#request').click(requestFavr);
+	//$('#offer').click(offerFavr);
+	//$('#request').click(requestFavr);
 	$('.complete').click(completeFavr);
 	//$('#login').submit(checkLogin);
 }
