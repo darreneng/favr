@@ -14,23 +14,30 @@ exports.getUserData = function(data, user_id) {
   // the current user
   for (var i = 0; i < user_favrs.length; i++) {
     var id = user_favrs[i]; // Get ID of favr
+
     if (favrs[id].completed) {
       favrs_completed.push(favrs[id]);
-    } else {
-      if (favrs[id].from == user_id)
-      {
-        if (favrs[id].accepted) {
+    } 
+
+    else if (favrs[id].from == user_id) {
+      if (favrs[id].accepted) {
           favrs_from.push(favrs[id]);
-        } else {
+      } 
+      else {
+          favrs_incoming.push(favrs[id]);
+      }
+    } 
+
+    else if (favrs[id].to == user_id){
+        if (favrs[id].accepted){
+          favrs_to.push(favrs[id]);
+        }
+        else{
           favrs_incoming.push(favrs[id]);
         }
-      } else if (favrs[id].to == user_id)
-      {
-        favrs_to.push(favrs[id]);
-      }
     }
+  }
 
-  } // end for
 
   user_data.favrs_from = favrs_from;
   user_data.favrs_to = favrs_to;
@@ -38,6 +45,6 @@ exports.getUserData = function(data, user_id) {
   user_data.favrs_completed = favrs_completed;
   user_data.username = user.username;
   //user_data.id = user.id;
-  console.log(favrs_incoming);
+  
   return user_data;
 };
