@@ -23,7 +23,7 @@ exports.getUserData = function(data, user_id) {
       if (favrs[id].accepted) {
           favrs_from.push(favrs[id]);
       } 
-      else {
+      else if (favrs[id].creator != user_id) {
           favrs_incoming.push(favrs[id]);
       }
     } 
@@ -32,7 +32,7 @@ exports.getUserData = function(data, user_id) {
         if (favrs[id].accepted){
           favrs_to.push(favrs[id]);
         }
-        else{
+        else if (favrs[id].creator != user_id){
           favrs_incoming.push(favrs[id]);
         }
     }
@@ -44,7 +44,8 @@ exports.getUserData = function(data, user_id) {
   user_data.favrs_incoming = favrs_incoming;
   user_data.favrs_completed = favrs_completed;
   user_data.username = user.username;
-  //user_data.id = user.id;
+  user_data.image = data['users'][user_id]['img'];
+  
   
   return user_data;
 };

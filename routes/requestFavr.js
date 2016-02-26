@@ -39,7 +39,7 @@ exports.requestFavr = function(req, res) {
 	// Create the new favr object
 	var favr = {"id":favr_id,"name":name,"from":recipient_id,"to":user_id,
 			"task":task,"date":realdate.toLocaleTimeString("en-us", options),
-			"completed":false,"accepted":false}; 
+			"completed":false,"accepted":false, "creator":user_id}; 
 
 	data['favrs'].push(favr);
 	data['users'][user_id]['favrs'].push(favr_id);

@@ -5,35 +5,40 @@
         "username": "Aaron Rodgers",
         "password": "packers",
         "favrs": [0,1,2,3,4,5,6],
-        "active": false
+        "active": false,
+        "img": "images/AaronRodgers.jpg"
       },
       {
         "id": 1,
         "username": "Cam Newton",
         "password": "panthers",
         "favrs": [0,1,2,3,4,5,6],
-        "active": false
+        "active": false,
+        "img": "images/cam.png"
       },
       {
         "id": 2,
         "username": "Peyton Manning",
         "password": "broncos",
-        "favrs": [0,1,2,3,4,5,6],
-        "active": false
+        "favrs": [0,1,2,3],
+        "active": false,
+        "img": "images/peyton.jpg"
       },
       {
         "id": 3,
         "username": "Russell Wilson",
         "password": "seahawks",
         "favrs": [],
-        "active": false
+        "active": false,
+        "img": "images/RusselWilson.jpg"
       },
       {
         "id": 4,
         "username": "Tom Brady",
         "password": "patriots",
-        "favrs": [],
-        "active": false
+        "favrs": [6],
+        "active": false,
+        "img": "images/brady.jpg"
       }
 ],
   "favrs":[
@@ -43,6 +48,7 @@
       "to": 2,
       "accepted": true,
       "completed": false,
+      "creator": 4,
       "name": "Susan B.",
       "task": "Make Dinner",
       "date": "Saturday, Feb 27, 2016 4:45 PM"
@@ -53,6 +59,7 @@
       "to": 2,
       "accepted": true,
       "completed": false,
+      "creator": 1,
       "name": "Mark B.",
       "task": "Cook Dinner",
       "date": "Saturday, Feb 27, 2016 4:45 PM"
@@ -63,6 +70,7 @@
       "to": 1,
       "accepted": true,
       "completed": false,
+      "creator": 2,
       "name": "Tim K.",
       "task": "Do Dishes",
       "date": "Thursday, Feb 18, 2016 5:00 PM"
@@ -73,6 +81,7 @@
       "to": 3,
       "accepted": true,
       "completed": false,
+      "creator": 1,
       "name": "Ron W.",
       "task": "Clean Clothes",
       "date": "Friday, Feb 19, 2016 9:00 AM"
@@ -83,6 +92,7 @@
       "to": 1,
       "accepted": true,
       "completed": false,
+      "creator": 3,
       "name": "Latavius L.",
       "task": "Get Groceries",
       "date": "Sunday, Feb 21, 2016 12:00 PM"
@@ -93,6 +103,7 @@
       "to": 5,
       "accepted": true,
       "completed": true,
+      "creator": 1,
       "name": "Tyler T.",
       "task": "Serenade",
       "date": "Sunday, Feb 28, 2016 4:00 PM"
@@ -103,6 +114,7 @@
       "to": 4,
       "accepted": false,
       "completed": false,
+      "creator": 1,
       "name": "Adam C.",
       "task": "Fix cupboard",
       "date": "Tuesday, Mar 1, 2016 6:00 PM"
