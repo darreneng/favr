@@ -1,11 +1,7 @@
 <html>
  <head>
     <title>Favr Sign Up</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>        
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="js/jquery-1.11.0.js"> </script>        
-    <script src="js/introHCI.js"> </script>    
+    {{> head}}
 </head>
 
 <body>
@@ -13,13 +9,13 @@
 			<header>
 				<h1>Favr Fam Registration</h1>
                 <h4>Become apart of the Favr Family!</h4>
-            </header> 
+            </header>
 
         <div>
-            <form action="/" method="post"> 
+            <form action="/" method="post">
 
-            <p> Name </p> 
-            <input type="text" name="username" placeholder="First and last name" required>   
+            <p> Name </p>
+            <input type="text" name="username" placeholder="First and last name" required>
 
             <br><br>
 
@@ -34,27 +30,27 @@
             <br><br>
 
             <p> Create a username </p>
-            <input type = "text" name="name" placeholder="Username" required>        
+            <input type = "text" name="name" placeholder="Username" required>
 
             <br><br>
 
             <p> Create a password </p>
-            <input type = "password" name="password" placeholder="Password" required>  
+            <input type = "password" name="password" placeholder="Password" required>
 
             <br><br>
 
             <p> Confirm your password </p>
-            <input type = "password" name="confirmpassword" placeholder="Password" required>  
+            <input type = "password" name="confirmpassword" placeholder="Password" required>
 
             <br><br>
 
-            <input class="button" name="submit" id="submit" tabindex="5" value="Join Favr Fam!" type="submit"> 
+            <input class="button" name="submit" id="submit" tabindex="5" value="Join Favr Fam!" type="submit">
 
             <br><br>
-            <a href="/">Return to Login</a> 
+            <a href="/">Return to Login</a>
         </form>
-    
-  </div>       
+
+  </div>
 </div>
 </body>
 </html>
