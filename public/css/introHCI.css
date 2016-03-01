@@ -43,3 +43,14 @@
 body {
 	padding-top: 70px;
 }
+
+/* Profile picture */
+.profilepic {
+	display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+	object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
