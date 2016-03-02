@@ -36,6 +36,16 @@ exports.getUserData = function(data, user_id) {
           favrs_incoming.push(favrs[id]);
         }
     }
+
+    //Change the name on the Favr to reflect differently depending on the user
+    if(user_id == favrs[id].from){
+      var other_id = favrs[id].to;
+      favrs[id].name = data['users'][other_id].username;
+    }
+    else{
+      var other_id = favrs[id].from;
+      favrs[id].name = data['users'][other_id].username;
+    }
   }
 
 
@@ -43,9 +53,9 @@ exports.getUserData = function(data, user_id) {
   user_data.favrs_to = favrs_to;
   user_data.favrs_incoming = favrs_incoming;
   user_data.favrs_completed = favrs_completed;
+  console.log(user_data.favrs_completed.length);
   user_data.username = user.username;
   user_data.image = data['users'][user_id]['img'];
-  
   
   return user_data;
 };
