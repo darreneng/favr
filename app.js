@@ -71,7 +71,7 @@ app.get('/declineFavr', declineFavr.decline);
 app.get('/acceptFavr', acceptFavr.accept);
 app.get('/authenticate', authenticate.view);
 app.get('/signup2', signup2.view);
-app.get('/homeb', homeB.view);
+app.get('/homeB', homeB.view);
 
 
 //Post Routes
