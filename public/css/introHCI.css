@@ -44,6 +44,10 @@ body {
 	padding-top: 70px;
 }
 
+#favr-logo {
+	font-family: "Pacifico";
+}
+
 /* Profile picture */
 .profilepic {
 	display: inline-block;
