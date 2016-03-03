@@ -42,6 +42,8 @@
 /* Compensate for navbar height */
 body {
 	padding-top: 70px;
+	padding-bottom: 70px;
+
 }
 
 #favr-logo {
@@ -57,4 +59,25 @@ body {
 	object-fit: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+
+.mybottom {
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+/* Make active links red */
+ul .active {
+	 background-color:rgba(0, 0, 0, 0.1);
+}
+ul {
+	overflow: hidden;
+	z-index: 10;
+}
+.bottom-tab {
+	text-align: center;
+	vertical-align: middle;
+
 }
