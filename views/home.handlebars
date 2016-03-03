@@ -7,111 +7,94 @@
 </head>
 
 <body>
-  <!-- Menu -->
-  {{> menu}}
 
-  <!-- Content -->
-  <div class="container-fluid">
-    <div class="tab-content">
-      <!-- Incoming Favrs -->
-      <div id="incoming" class="tab-pane fade in active">
-        {{#if favrs_incoming}}
-          <h4>Incoming Favrs</h4>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Date</td>
-                <th>User</td>
-                <th>Task</td>
-              </tr>
-            </thead>
-            <tbody>
-              {{#each favrs_incoming}}
-                <div class='favr' id="{{id}}">
-                  <tr>
-                    <td>{{date}}</td>
-                    <td>{{name}}</td>
-                    <td>{{task}}</td>
+ {{> menu}}
 
-                    <form action ="/acceptFavr" method = "get">
-                      <input hidden type="number" name="id" value={{id}}>
-                      <td><input type="submit" class="accept" value="Accept" ></td>
-                    </form>
+  <div class="container">
+    {{#if favrs_incoming}}
+        <h4>Incoming Favrs</h4>
+        <table class="table">
+          <thead>
+                <tr>
+                  <th>Date</td>
+                  <th>User</td>
+                  <th>Task</td>
+                </tr>
+          </thead>
+          <tbody>
+            {{#each favrs_incoming}}
+              <div class='favr' id="{{id}}">
+                <tr>
 
-                    <form action ="/declineFavr" method = "get">
-                      <input hidden type="number" name="id" value={{id}}>
-                      <td><input type ="submit" class="decline" value="Decline"></td>
-                    </form>
-                  </tr>
-                </div>
-              {{/each}}
-            </tbody>
-          </table>
-        {{/if}}
-      </div>
-      <!-- Favrs I owe-->
-      <div id="i-owe" class="tab-pane fade">
-        {{#if favrs_from}}
-          <h4>Favrs I owe</h4>
-          <table class="table">
-            <thead>
+                  <td>{{date}}</td>
+                  <td>{{name}}</td>
+                  <td>{{task}}</td>
+
+                  <form action ="/acceptFavr" method = "get">
+                    <input hidden type="number" name="id" value={{id}}>
+                  <td><input type="submit" class="accept" value="Accept" ></td>
+                 </form>
+
+                  <form action ="/declineFavr" method = "get">
+                    <input hidden type="number" name="id" value={{id}}>
+                  <td><input type ="submit" class="decline" value="Decline"></td>
+                </form>
+
+                </tr>
+              </div>
+            {{/each}}
+        </tbody>
+      </table>
+    {{/if}}
+
+
+    {{#if favrs_from}}
+      <h4>Favrs I owe</h4>
+      <table class="table">
+        <thead>
               <tr>
                 <th>Date</td>
                 <th>User</td>
                 <th>Task</td>
                 <th>Is this Favr complete?</td>
               </tr>
-            </thead>
-            <tbody>
-              {{#each favrs_from}}
-                  {{> pending}}
-              {{/each}}
-            </tbody>
-          </table>
-          {{else}}
-            <br><br>
-            <h4><i> You currently do not owe anyone any Favrs </i></h4>
-            <br><br>
-        {{/if}}
-      </div>
-      <!-- Favrs for me-->
-      <div id="for-me" class="tab-pane fade">
-        {{#if favrs_to}}
-            <h4>Favrs Owed to me</h4>
-            <table class="table">
-              <thead>
-                    <tr>
-                      <th>Date</td>
-                      <th>User</td>
-                      <th>Task</td>
-                      <th>Is this Favr complete?</td>
-                    </tr>
-              </thead>
-              <tbody>
-                {{#each favrs_to}}
-                    {{> pending}}
-                {{/each}}
-            </tbody>
-          </table>
-          {{else}}
-          <h4><i> No one currently owes you any Favrs <i></h4>
-        {{/if}}
-      </div>
-    </div>
-    <!-- Bottom tabs -->
-    <nav class="navbar navbar-default navbar-fixed-bottom nav-inline">
-      <div class="container-fluid row">
-        <ul class="nav nav-tabs">
-          <li class="active bottom-tab col-xs-4"><a href="#incoming" data-toggle="tab">Incoming</a></li>
-          <li class="bottom-tab col-xs-4"><a href="#i-owe" data-toggle="tab">I Owe</a></li>
-          <li class="bottom-tab col-xs-4"><a href="#for-me" data-toggle="tab">For Me</a></li>
-        </ul>
-      </div>
-    </nav>
+        </thead>
+        <tbody>
+          {{#each favrs_from}}
+              {{> pending}}
+          {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    <br><br>
+    <h4><i> You currently do not owe anyone any Favrs </i></h4>
+    <br><br>
+  {{/if}}
+
+
+  {{#if favrs_to}}
+      <h4>Favrs Owed to me</h4>
+      <table class="table">
+        <thead>
+              <tr>
+                <th>Date</td>
+                <th>User</td>
+                <th>Task</td>
+                <th>Is this Favr complete?</td>
+              </tr>
+        </thead>
+        <tbody>
+          {{#each favrs_to}}
+              {{> pending}}
+          {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    <h4><i> No one currently owes you any Favrs <i></h4>
+  {{/if}}
+
   </div>
 
-
-  <script>$.material.init();</script>
 
 </body>
 </html>
