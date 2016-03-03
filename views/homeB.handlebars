@@ -11,16 +11,22 @@
   {{> menu}}
 
   <!-- Content -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active bottom-tab col-xs-4" role="presentation">
+      <a href="#incoming" data-toggle="tab" role="tab">Incoming</a>
+    </li>
+    <li class="bottom-tab col-xs-4" role="presentation">
+      <a href="#i-owe" data-toggle="tab" role="tab">I Owe</a>
+    </li>
+    <li class="bottom-tab col-xs-4" role="presentation">
+      <a href="#for-me" data-toggle="tab" role="tab">For Me</a>
+    </li>
+  </ul>
   <div class="container">
-    <ul class="nav nav-tabs">
-      <li class="active bottom-tab col-xs-4"><a href="#incoming" data-toggle="tab">Incoming</a></li>
-      <li class="bottom-tab col-xs-4"><a href="#i-owe" data-toggle="tab">I Owe</a></li>
-      <li class="bottom-tab col-xs-4"><a href="#for-me" data-toggle="tab">For Me</a></li>
-    </ul>
     <div class="tabbable">
       <div class="tab-content">
         <!-- Incoming Favrs -->
-        <div id="incoming" class="tab-pane fade active">
+        <div id="incoming" class="tab-pane fade active in" role="tabpanel">
           {{#if favrs_incoming}}
             <h4>Incoming Favrs</h4>
             <table class="table">
@@ -56,7 +62,7 @@
           {{/if}}
         </div>
         <!-- Favrs I owe-->
-        <div id="i-owe" class="tab-pane fade">
+        <div id="i-owe" class="tab-pane fade" role="tabpanel">
           {{#if favrs_from}}
             <h4>Favrs I owe</h4>
             <table class="table">
@@ -81,7 +87,7 @@
           {{/if}}
         </div>
         <!-- Favrs for me-->
-        <div id="for-me" class="tab-pane fade">
+        <div id="for-me" class="tab-pane fade" role="tabpanel">
           {{#if favrs_to}}
               <h4>Favrs Owed to me</h4>
               <table class="table">
